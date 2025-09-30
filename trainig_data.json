@@ -1,0 +1,284 @@
+[
+  {
+    "Instruction": "What is your name",
+    "Response": "I am Timevision copilot"
+  },
+  {
+    "Instruction": "What should I call you",
+    "Response": "My name is Timevision copilot.   An AI assistant developed by Ausdia"
+  },
+  {
+    "Instruction": "What are your abilities",
+    "Response": "As an interactive copilot , I can help setup your workflows in Timevision tool and also help query on the commands/setting in the tool.  I can also assist in helping with the debug of the rule violations and help you understand the results better."
+  },
+  {
+    "Instruction": "What is the command to report the design information",
+    "Response": "report_design command provides summary  of design .This command should be used after the design read is done.However, there are few options that also required constraints to be read before using this command"
+  },
+  {
+    "Instruction": "What are the options supported by report_design",
+    "Response": "report_design supports  options  stats,clocks,clock_relation,blackbox,all"
+  },
+  {
+    "Instruction": "What does option ‘stats’ for report_design do in short description",
+    "Response": "reports design statistics for loaded design in the tool"
+  },
+  {
+    "Instruction": "What does option ‘stats’ for report_design does in elaborate",
+    "Response": "This options is used to know the count of cells and pin and instance in the design"
+  },
+  {
+    "Instruction": "How to use  stats option for report_design",
+    "Response": "report_design -stats"
+  },
+  {
+    "Instruction": "What is the output of this option ‘stats’ of report_design",
+    "Response": "** Design Statistics ** \\n  Ports     4 \\n  Cells     27\\n  Nets      4\\n  Registers 12"
+  },
+  {
+    "Instruction": "What does option  ‘blackbox’ for report_design do in short description",
+    "Response": "reports the black boxes in the design.  There is also a separate report_blackbox command for reporting bboxes"
+  },
+  {
+    "Instruction": "What does option ‘blackbox’ for report_design does in elaborate",
+    "Response": "This option reports the black boxed modules in the design.   Modules will be usually bboxed when the user want to reduce the design size.  However ,care should be taken that qor is not impacted due to bboxing.   If the module is in the path of clock/constrain propagation it would impact QOR and user need to informed that bboxed modules are impacting QoR"
+  },
+  {
+    "Instruction": "How to use blackbox option for report_design",
+    "Response": "report_design -black_box"
+  },
+  {
+    "Instruction": "What is the sample output of blackbox option for report_design command",
+    "Response": "Blackbox Instance  Cell  \\n  ----------------------- \\n   a/b/c                         modC"
+  },
+  {
+    "Instruction": "What does clock option for report_design do in short",
+    "Response": "This option give info on the clocks read from SDC file"
+  },
+  {
+    "Instruction": "What does clock option for report_design does in elaborate",
+    "Response": "The “clocks” option gives details of the successful clock constraints. This option must be used post constraints reading (clock constraints) stage. The table below displays the clock name, type (whether the clock is primary/created “c” or generated “g” or virtual “v”), frequency value of each clock, number of registers every clock reaches, Clock sources that are input or output ports. Every generated clock is listed below its master clock with a “+” to its name."
+  },
+  {
+    "Instruction": "How to use clock option for report_design",
+    "Response": "report_design -clocks"
+  },
+  {
+    "Instruction": "What is the sample output of clock option for report_design",
+    "Response": "** Clock Statistics **\\n  ClockName                          Type   Freq.    #'Regs  #'Inputs  #'Outputs  Flags \\n  -------------------------------------------------------------------------------------\\n  RX_SYNCCLK_cts                     c      500.0         1         2          0      \\n  aClk1                              c      729.927    6923         3          0       \\n  aClk2                              c      347.222     914         3          0       \\n  armRefClk                          c      50.0          0         1          0     \\n    +armClk                          g      500.0      6800         0          0       \\n    +dspClk                          g      400.0       426        92          0     \\npciclk                             c      300.3         3         5          0"
+  },
+  {
+    "Instruction": "What does clock_relation option for report_design does in short",
+    "Response": "This option help provide user the clock relation between clock pairs"
+  },
+  {
+    "Instruction": "What does clock_relation option for report_design do in elaborate",
+    "Response": "Even when the input constraints does not specify the clock relationship between any two clocks in the design, Timevision can interpret the relationship of any clocks. To achieve that “infer_clock_relation” command must be used before this command. There are many other ways to report the clock relationship, this way is one among them."
+  },
+  {
+    "Instruction": "How to use  clock_relation option for report_design",
+    "Response": "report_design -clock_relation"
+  },
+  {
+    "Instruction": "What is the output for clock_relation option for report_design",
+    "Response": "LaunchClock                     CaptureClock                    RelationType                       PairType        \\n --------------------------------------------------------------------------------------------------------------------------\\n refClk                          refClk_fast                     physically_exclusive               PhysicallyExclusive    \\n                                  fabricClk                       source_sync                        SourceSync             \\n                                  phyRefClk                       async                              AsyncSlowToFastHarmonic\\n                                  phyLaneTxClk0                   async                              AsyncNonHarmonic"
+  },
+  {
+    "Instruction": "What does latches option do for report_design in short",
+    "Response": "This option gives list of latches in design"
+  },
+  {
+    "Instruction": "What does latches option for report_design in elaborate",
+    "Response": "With this option TV reports all cells that have the attribute “is_latch” is true.  This info is useful for designers to get  better understanding of their design"
+  },
+  {
+    "Instruction": "How to use latches option for report_design",
+    "Response": "report_design -latches"
+  },
+  {
+    "Instruction": "Show me the output for latches option for report_design",
+    "Response": "Latch Instance  Cell\\n---------------------------\\na/b/c/d_latch  CKLNQ1"
+  },
+  {
+    "Instruction": "What is the setting to when user specified file extension need to be added",
+    "Response": "the setting is  ‘hdl_language_extensions’"
+  },
+  {
+    "Instruction": "What does the setting ‘hdl_language_extensions’ does",
+    "Response": "This setting is used when user specified file extension need to be added"
+  },
+  {
+    "Instruction": "When  hdl_language_extensions setting is used.",
+    "Response": "When file extension is not in the default extension supported by TV and When user have custom extension for his files"
+  },
+  {
+    "Instruction": "What is the default value of setting ‘hdl_language_extensions’",
+    "Response": "For systemverilog   default value is  .sva"
+  },
+  {
+    "Instruction": "What are the allowed value for hdl_language_extensions",
+    "Response": "Any extension but should be a string"
+  },
+  {
+    "Instruction": "How is the hdl_language_extension should be used.",
+    "Response": "‘lappend hdl_language_extensions .svh systemverilog’  .This will add .svh extension to the allowed systemverilog files"
+  },
+  {
+    "Instruction": "What does setting ‘read_hdl_default_vhdl_version ‘  do.",
+    "Response": "This setting is used when user specified file extension need to be added"
+  },
+  {
+    "Instruction": "When is the setting ‘read_hdl_default_vhdl_version’ should be used.",
+    "Response": "If user have latest VHDL constructs in the RTL , he need to update this setting"
+  },
+  {
+    "Instruction": "What is the default value of  ‘read_hdl_default_vhdl_version’.",
+    "Response": "vhdl93."
+  },
+  {
+    "Instruction": "What are other allowed value for ‘read_hdl_default_vhdl_version’",
+    "Response": "vhdl93  and vhdl2008"
+  },
+  {
+    "Instruction": "Show me an example on how to use ‘read_hdl_default_vhdl_version’ setting.",
+    "Response": "set read_hdl_default_vhdl_version  vhdl2008"
+  },
+  {
+    "Instruction": "Can you explain the rule  CLK-MIS001 in short",
+    "Response": "Missing potential primary clock source"
+  },
+  {
+    "Instruction": "Can you explain rule CLK-MIS001 in detail",
+    "Response": "This rule identifies all ports and macro pins in the designs which should have a create_clock defined on them, but no such create_clock definition exists in the current constraints. In order to reduce the noise, Timevision assigns a score to each reported source. A score of 100 means that Timevision is 100% sure the object reported should be a create_clock source, and a score less than 100 means it may be a create_clock source. In some cases, a blackbox output pin will report as a missing clock source because Timevision could not trace through it. In that case the violation can be waived or the blackbox needs to be fixed."
+  },
+  {
+    "Instruction": "Show me a scenario where CLK-MIS001 is issued",
+    "Response": "< IMAGE1>   ,   In the design, ports clk1, clk2 do not have a create_clock defined on them so the register clock pins are not getting a clock from them. However, port clk3 does have a create_clock defined but F2/CK is still missing a clock from clk2. Therefore, check_constraints will report this under the rule CLK-MIS001"
+  },
+  {
+    "Instruction": "What is the debug command for  CLK-MIS001",
+    "Response": "debug_rule -rule CLK-MIS001 id A1 -waiver"
+  },
+  {
+    "Instruction": "Show the debug report for CLK-MIS001"
+  },
+  {
+    "Instruction": "How to understand the debug report for CLK-MIS001",
+    "Response": "The report shows the timing path starting from potential port where the clock definition is missing"
+  },
+  {
+    "Instruction": "What is the fix to be done for resolving CLK-MIS001",
+    "Response": "User need to add 'create_clock' definition to the missing clock source."
+  },
+  {
+    "Instruction": "Can you explain  the rule  SDC-MCP-09 in short",
+    "Response": "Multicycle path -setup and -hold have same multiplier value"
+  },
+  {
+    "Instruction": "Can you explain the rule SDC-MCP-09 in detail",
+    "Response": "This rule identifies set_multicycle_path in which both -setup and -hold have same multiplier value.   Hold cycle value should be less than setup cycle value.  Usually it will be setup -1"
+  },
+  {
+    "Instruction": "Show a scenario where SDC-MCP-09 is issued",
+    "Response": "<IMAGE2> . In the example, both -setup and -hold of set_multicycle_path has same multiplier value 2.Therefore, check_constraints will report this exception under the rule SDC-MCP-09."
+  },
+  {
+    "Instruction": "What is the debug command for SDC-MCP-09",
+    "Response": "debug_rule -rule SDC-MCP-09 -id A0 -waiver"
+  },
+  {
+    "Instruction": "What is debug report for SDC-MCP-09",
+    "Response": "#********************************************************"
+  },
+  {
+    "Instruction": "How to read the debug report for SDC-MCP-09",
+    "Response": "The reports show the TCL file where the MCPs are coded that has same multiplier value"
+  },
+  {
+    "Instruction": "How to fix the SDC-MCP-09 violation",
+    "Response": "Usually hold will be  having multiplier value lesser than setup.  To fix this, user need to reduce the hold cycle value"
+  },
+  {
+    "Instruction": "What does  TV-CDC stand  for ?",
+    "Response": "TV-CDC stand for  TimeVision-Clock Domain Crossing"
+  },
+  {
+    "Instruction": "What is unique about TV-CDC.",
+    "Response": "TV-CDC uses SDC timing constraints only to drive CDC analysis.  This differs markedly from other CDC tools which require both setup of clocks as well as domains/clock groupings to drive CDC analysis."
+  },
+  {
+    "Instruction": "How does TV-CDC different from other CDC solutions",
+    "Response": "TV_CDC patented technology supports CDC analysis with multiple clock propagation to a register.  This patented technology enable TV_CDC to infer clock relationships based on the clock structure then categorize every clock pair.  Once the clock pairs are categorized certain relationships are automatically excluded from CDC analysis, thus significantly reducing unnecessary CDC reporting. It differs markedly from other CDC tools which require both setup of clocks as well as domains/clock groupings to drive CDC analysis."
+  },
+  {
+    "Instruction": "What is the sequence for performing TV-CDC.",
+    "Response": "TV-CDC following steps as below to perform the CDC analysis internally. CDC design setup \\n  CDC Core Analysis and Database \\n CDC Reporting and Debugging \\n CDC Applications"
+  },
+  {
+    "Instruction": "What are different jargons/terms used in TV-CDC analysis?",
+    "Response": "There are multiple terms like ‘Launch point’, ‘Capture Point’, ‘ cluster’, ‘Reconvergence’, Data Binding’,’Sample point’ in the TV-CDC analysis."
+  },
+  {
+    "Instruction": "Explain the term ‘Launch point’ in the TV-CDC analysis.",
+    "Response": "Launch point  in TV-CDC analysis refers to ‘The data launching point in the transmit clock domain’  .  The terminology is graphically shown in <IMAGE3>"
+  },
+  {
+    "Instruction": "Explain the term ‘Capture point’ in TV-CDC analysis.",
+    "Response": "Capture point in TV-CDC analysis refer to ‘The data capturing point in the receiving clock domain’ . The terminology is graphically shown in <IMAGE3>"
+  },
+  {
+    "Instruction": "Explain the term ‘Sample point’ in TV-CDC analysis",
+    "Response": "Sample point in TV-CDC analysis refers to ‘The data final (synchronized) capturing point in the receiving clock domain’ . The terminology is graphically shown in <IMAGE3>"
+  },
+  {
+    "Instruction": "Explain the term ‘ Cluster’ in TV-CDC analysis.",
+    "Response": "Cluster in TV-CDC analysis refer to ‘A collection of synchronizers or data crossing points’.  The terminology is graphically shown in <IMAGE3>."
+  },
+  {
+    "Instruction": "Explain the term ‘Reconvergence’ in TV-CDC analysis.",
+    "Response": "‘Reconvergence’ in TV-CDC analysis refers to ‘A point where synchronized signals converge’ . The terminology is graphically shown in <IMAGE3>."
+  },
+  {
+    "Instruction": "Explain the term ‘Data Binding’ in TV-CDC analysis.",
+    "Response": "‘Data Binding ‘ in TV-CDC refers to ‘The process of collecting unsynchronized (data) crossings together with synchronized control crossings’ . The terminology is graphically show in <IMAGE3>"
+  },
+  {
+    "Instruction": "How does Timevision identify the inter-clock relationship that need to be excluded from CDC analysis.",
+    "Response": "The first step in CDC analysis is to determine how to select the clocks to be verified. Timevision allows multiple-clocks per register (like an STA tool), and thus understanding the clock pairs relationship being verified is even more important in TV-CDC. Once the design and constraints are loaded and the timing graph is generated, Timevision automatically infer clock relations with the command  ‘infer_clock_relations’."
+  },
+  {
+    "Instruction": "What is the algorithm/flow for Timevision to decide if a given clock pair need to be analysed for CDC.",
+    "Response": "If ‘clock pair has no path’ , there is no need of CDC analysis   else if ‘clock pair has user defined physically exclusive group , there is no need of CDC analysis else if ‘clock pair Timevision inferred physically exclusive group , there is no need of CDC analysis   else if ‘clock pair has user defined logically exclusive/async group’ there is need of CDC analysis  else if ‘clock pair has user defined clock to clock false path’, there is need of CDC analysis  else if  ‘clock pair has Timevision inferred async clock pair, there is need of CDC analysis  else there is no need of CDC analysis."
+  },
+  {
+    "Instruction": "Can you explain graphically on how Timevision checks if a clock pair has to be performed in CDC analysis in TV-CDC.",
+    "Response": "Refer to <IMAGE4> for the graphical response of clock pair selection to perform CDC analysis."
+  },
+  {
+    "Instruction": "How can the Timevision inferred clock group can be overridden in TV-CDC analysis",
+    "Response": "The inferred clock grouping of clock pairs can be forced in TV-CDC using ‘define_clock_relation’. This will bypass any inferred exclusivity of clock pairs and apply the user override, which includes any Logically Exclusive domain interpretation"
+  },
+  {
+    "Instruction": "How will Timevision finalize the clock relation for a clock pair if there is no ‘define_clock_relation’."
+  },
+  {
+    "Instruction": "Will the TV-CDC be analysed if the  tool inferred clock relation is ‘sync’ and user defined clock relation in SDC is ‘CGA’ (set_clock_groups -async )",
+    "Response": "Yes"
+  },
+  {
+    "Instruction": "Will the TV-CDC be analysed if the tool inferred  clock relation is ‘sync’ and user defined clock relation in SDC is  ‘CGLE (clock group logically exclusive)’",
+    "Response": "Yes"
+  },
+  {
+    "Instruction": "Will the TV-CDC be analysed if the tool inferred  clock relation is ‘physically exclusive’ and user defined clock relation in SDC is  ‘CGA ( set_clock_group -async)’",
+    "Response": "No"
+  },
+  {
+    "Instruction": "Will the TV-CDC be analysed if the tool inferred  clock relation is ‘physically exclusive’ and user defined clock relation in SDC is  ‘CGLE (set_clock_groups -logically_exclusive)’",
+    "Response": "No"
+  },
+  {
+    "Instruction": "Will the TV-CDC be analysed if the tool inferred  clock relation is ‘logically_exclusive:tocommon’ and user defined clock relation in SDC is  ‘CGLE (set_clock_groups -logically_exclusive)’",
+    "Response": "Yes"
+  }
+]
